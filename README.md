@@ -4,7 +4,7 @@ This a Contract PDf Generator for generating pdf contracts given the names and t
 Included library from:
 https://github.com/barryvdh/laravel-dompdf#installation
 
-Setting up
+#Setting up
 git clone "https://github.com/swdk/ContractPDFGenerator"
 
 Remember to change .env.example to .env
@@ -42,4 +42,4 @@ localhost
 
 http://localhost:8000/form
 The data in form will be passed to PDFController for generating pdf
-The will be in folder storage/app
+The form will be in folder storage/app
