@@ -22,6 +22,7 @@ Barryvdh\DomPDF\ServiceProvider::class,
 You can optionally use the facade for shorter code. Add this to your facades:
 
 'PDF' => Barryvdh\DomPDF\Facade::class,
+
 #Lumen:
 
 After updating composer add the following lines to register provider in bootstrap/app.php
@@ -30,6 +31,9 @@ $app->register(\Barryvdh\DomPDF\ServiceProvider::class);
 To change the configuration, copy the config file to your config folder and enable it in bootstrap/app.php:
 
 $app->configure('dompdf');
+
+
+
 
 php artisan key:generate
 
@@ -41,5 +45,6 @@ php artisan serve
 localhost
 
 http://localhost:8000/form
+
 The data in form will be passed to PDFController for generating pdf
 The form will be in folder storage/app
