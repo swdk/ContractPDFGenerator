@@ -41,6 +41,7 @@ php artisan key:generate
 
 
 #Usage
+
 php artisan serve
 localhost
 
