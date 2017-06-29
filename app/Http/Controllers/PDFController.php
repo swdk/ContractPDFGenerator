@@ -15,12 +15,13 @@ class PDFController extends Controller
 
 
 	public function getPDF(Request $request) {
-		//check for correct request method
-		$method = $request->method();
-		if ($request->isMethod('POST')) {
-		    echo "please use GET method";
-		    return;
-		}
+		// //check for correct request method
+		// $method = $request->method();
+		// if ($request->isMethod('POST')) {
+		//     echo "please use GET method";
+		//     return;
+		// }
+		
 		//name1 and name2 are the landlord and renter
 		$name1 =  $request->input('name1');
 		$name2 =  $request->input('name2');
@@ -32,7 +33,8 @@ class PDFController extends Controller
 
 		//accepting terms as an array as the number of terms is unknown.
 		//this is hardcoded for testing
-		$terms = array("(一）甲方保证上述房屋：已依法取得房屋所有权证书或相关产权证明文件；权属明晰，无产权争议；不在建设拆迁公告范围内；能保证安全居住、使用；有关法律、法规未限制出租。 其它：已取得其他共有人书面同意；已经抵押权人同意；如系托管的房屋，已经托管的房屋所有权人委托出租。 如甲方上述保证不实，由此给乙方造成的损失，由甲方负责赔偿。", "(二）甲方负责对房屋及其附属设施定期检查并承担正常的房屋维修费用。如因延期修缮致使乙方遭受损失，甲方负责赔偿。（本条双方另有约定的除外）。" , 3, 4);
+		$terms = $request->input('term');
+		//$terms = array("(一）甲方保证上述房屋：已依法取得房屋所有权证书或相关产权证明文件；权属明晰，无产权争议；不在建设拆迁公告范围内；能保证安全居住、使用；有关法律、法规未限制出租。 其它：已取得其他共有人书面同意；已经抵押权人同意；如系托管的房屋，已经托管的房屋所有权人委托出租。 如甲方上述保证不实，由此给乙方造成的损失，由甲方负责赔偿。", "(二）甲方负责对房屋及其附属设施定期检查并承担正常的房屋维修费用。如因延期修缮致使乙方遭受损失，甲方负责赔偿。（本条双方另有约定的除外）。" , 3, 4);
 		// $contractNumber = $request->input('terms');
 
 		//buildung up the inital term with the two names
