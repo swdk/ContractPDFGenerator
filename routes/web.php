@@ -11,16 +11,19 @@
 |
 */
 
+
+Route::get('/remotesigntest','phpsdk\test\RemoteSignTest@test');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/vista', function () {
     return view('vista');
 });
 
 
 Route::get('form',function(){
-
 return view('form');
 });
 
@@ -30,7 +33,11 @@ $pdf= PDF::loadview('vista');
 return $pdf->stream('contract.pdf');
 });
 
-Route::get('submit','PDFController@getPDF');
+Route::get('/submit','PDFController@getPDF');
+//App\Http\Controllers\sdk-php-sample-master\com.qiyuesuo.Test\
 
 
+//Route::get('sealtest','SealTest@test')
+
+// Route::get ('util','util');
 
