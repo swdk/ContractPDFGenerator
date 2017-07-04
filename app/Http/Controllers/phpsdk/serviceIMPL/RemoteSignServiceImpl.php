@@ -37,7 +37,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 	}
 	
 	public function createByHtml($post_data){
-		$check_result = checkRemote($post_data,'createByHtml');
+		$check_result = helper::checkRemote($post_data,'createByHtml');
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
@@ -47,7 +47,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 	}
 	
 	public function createByTemplate($post_data){
-		$check_result = checkRemote($post_data,'createByTemplate');
+		$check_result = helper::checkRemote($post_data,'createByTemplate');
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
@@ -57,7 +57,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 		return $this->SDk->service($serviceUrl,$post_data);
 	}
 	public function signByPlatform($post_data){
-		$check_result = checkRemote($post_data,'signByPlatform');
+		$check_result = helper::checkRemote($post_data,'signByPlatform');
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
@@ -66,7 +66,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 		return $this->SDk->service($serviceUrl,$post_data);
 	}
 	public function signBycompany($post_data){
-		$check_result = checkRemote($post_data,'signBycompany');
+		$check_result = helper::checkRemote($post_data,'signBycompany');
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
@@ -75,7 +75,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 		return $this->SDk->service($serviceUrl,$post_data);
 	}
 	public function signByPerson($post_data){
-		$check_result = checkRemote($post_data,'signByPerson');
+		$check_result = helper::checkRemote($post_data,'signByPerson');
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
@@ -104,7 +104,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 	}*/
 	
 	function downloadZip($documentId){
-		$check_result = checkDown($documentId);
+		$check_result = helper::checkDown($documentId);
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
@@ -125,7 +125,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 	}*/
 	
 	function downloadPdf($documentId){
-		$check_result = checkDown($documentId);
+		$check_result = helper::checkDown($documentId);
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
@@ -138,7 +138,7 @@ class RemoteSignServiceImpl implements RemoteSignService{
 	}
 	
 	function signUrl($post_data){
-		$check_result = checkRemoteSignurl($post_data,'signUrl');
+		$check_result = helper::checkRemoteSignurl($post_data,'signUrl');
 		if(!($check_result['code']===0)){
 			return $check_result;
 		}
