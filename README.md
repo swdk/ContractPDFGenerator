@@ -4,17 +4,20 @@ This a Contract PDf Generator for generating pdf contracts given the names and t
 Included library from:
 https://github.com/barryvdh/laravel-dompdf#installation
 
-#Setting up
+## Setting up
 git clone "https://github.com/swdk/ContractPDFGenerator"
 
 Remember to change .env.example to .env
 
+```
+> composer update
+```
 
-composer update
-composer require barryvdh/laravel-dompdf
+```
+> composer require barryvdh/laravel-dompdf
+```
 
-
-#Laravel 5.x:
+## Laravel 5.x:
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 
@@ -23,29 +26,45 @@ You can optionally use the facade for shorter code. Add this to your facades:
 
 'PDF' => Barryvdh\DomPDF\Facade::class,
 
-#Lumen:
-
-After updating composer add the following lines to register provider in bootstrap/app.php
-
-$app->register(\Barryvdh\DomPDF\ServiceProvider::class);
-To change the configuration, copy the config file to your config folder and enable it in bootstrap/app.php:
-
-$app->configure('dompdf');
+```
+> php artisan key:generate
+```
+## Detailed configuration please refer to https://github.com/barryvdh/laravel-dompdf#installation
 
 
+## Usage
+make sure your computer have the fonts for simplified chinese, we used wts11 in this example
+
+```
+> php artisan serve
+```
+In your Browser :
+```
+> http://localhost:8000/
+```
+Fill out the contract details <br>
+The data in form will be passed to PDFController for generating pdf <br>
+The contract will be in folder storage/app <br>
+
+## signature
+
+```
+> http://localhost:8000/remotesigntest
+```
+
+Please refer to app/Http/Controllers/phpsdk/test/RemoteSignTest.php for more debugging messages
 
 
-php artisan key:generate
+## Part 1
 
-#Detailed configuration please refer to https://github.com/barryvdh/laravel-dompdf#installation
+![Screenshot](1.png)
 
+## Part 2
 
-#Usage
+![Screenshot](2.png)
+## Part 3
 
-php artisan serve
-localhost
+![Screenshot](3.png)
+## Part 4
 
-http://localhost:8000/form
-
-The data in form will be passed to PDFController for generating pdf
-The form will be in folder storage/app
+![Screenshot](4.png)
