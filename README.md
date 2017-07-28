@@ -46,7 +46,7 @@ Fill out the contract details <br>
 The data in form will be passed to PDFController for generating pdf <br>
 The contract will be in folder storage/app <br>
 
-## signature
+## Signature
 
 ```
 > http://localhost:8000/remotesigntest

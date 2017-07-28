@@ -22,7 +22,7 @@ class RemoteSignTest extends Controller
 		for $results returned from qys please refer to http://open.qiyuesuo.com/document/2323093682498781193 for debugging
 
 		this test function demonstrated 4 features of the platform
-		In practice, you should seperate those features into different functions
+		In practice, you should seperate those features into different functions and call it seperately
 
 		The flow of the functions:
 		 uploading the local contract to QYS server ->returned documentId,
@@ -32,7 +32,7 @@ class RemoteSignTest extends Controller
 
 		 THe 3rd feature is sign by user, you should have collected user info and their sealImageBase64 image for signiture to use.
 
-		 The 4th feature contract checking, where it will return a url to their site to see
+		 The 4th feature contract checking, where it will return a url to their site
 
 */
 	public function test() {
@@ -49,7 +49,6 @@ class RemoteSignTest extends Controller
 		//Part 1:  Upload Document to server and obtain documentId
 		/*
 		potential return
-		响应码		描述
 		0				请求成功 success
 		1001		请求失败 fail (might be IP whitelist issue)
 		1005		无效的请求参数 (invalid arguement)
@@ -94,7 +93,7 @@ class RemoteSignTest extends Controller
 
 /*
 potential return
-0	请求成功		success
+0			请求成功		success
 1001	请求失败 fail (might be IP whitelist issue)
 1005	无效的请求参数 invalid arguement
 1402	校验签名失败，无效的PDF文件 invalid pdf document
