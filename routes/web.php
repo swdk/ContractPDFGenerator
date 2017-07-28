@@ -15,29 +15,7 @@
 Route::get('/remotesigntest','phpsdk\test\RemoteSignTest@test');
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/vista', function () {
-    return view('vista');
-});
-
-
-Route::get('form',function(){
-return view('form');
-});
-
-Route::get('pdfweb',function(){
-
-$pdf= PDF::loadview('vista');
-return $pdf->stream('contract.pdf');
+    return view('form');
 });
 
 Route::get('/submit','PDFController@getPDF');
-//App\Http\Controllers\sdk-php-sample-master\com.qiyuesuo.Test\
-
-
-//Route::get('sealtest','SealTest@test')
-
-// Route::get ('util','util');
-
