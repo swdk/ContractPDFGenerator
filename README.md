@@ -54,6 +54,20 @@ The contract will be in folder storage/app <br>
 
 Please refer to app/Http/Controllers/phpsdk/test/RemoteSignTest.php for more debugging messages
 
+login to https://cloud.qiyuesuo.me/company/apisetting <br><br>
+Setting the whitelist to your webserver!!!!!!<br><br>
+For $results returned from qys please refer to http://open.qiyuesuo.com/document/2323093682498781193 for debugging
+this test function demonstrated 4 features of the platform<br><br>
+In practice, you should seperate those features into different functions and call it seperately<br><br>
+The flow of the functions:<br><br>
+Uploading the local contract to QYS server ->returned documentId, which you should store in db. But for testing purpose it will be stored in $documentIdGenerated<br><br>
+The 2nd feature is sign by platform, you should optain sealId and set signing location<br><br>
+The 3rd feature is sign by user, you should have collected user info and their sealImageBase64 image for signiture to use.<br><br>
+The 4th feature is contract checking, where it will return a url to their site<br><br>
+
+
+
+
 
 ## Part 1
 
